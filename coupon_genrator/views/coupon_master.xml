@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="coupon_master_tree" model="ir.ui.view">
+        <field name="name">coupon.master.tree</field>
+        <field name="model">coupon.master</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="coupon_value"/>
+                <field name="coupon_generator_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="coupon_master_form" model="ir.ui.view">
+        <field name="name">coupon.master.form</field>
+        <field name="model">coupon.master</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="coupon_value"/>
+                                            <field name="coupon_generator_id"/>
+
+                        </group>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_coupon_master">
+        <field name="name">Coupon Master</field>
+        <field name="res_model">coupon.master</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="coupon_master_menu_2" name="Coupon Master" parent="coupon_genrator_menu"/>
+    <menuitem id='coupon_master_id' name='coupon Master' parent="coupon_genrator_menu_2" action="action_coupon_master"/>
+
+</odoo>

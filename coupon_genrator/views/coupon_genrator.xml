@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="coupon_genrator_tree" model="ir.ui.view">
+        <field name="name">coupon.generator.tree</field>
+        <field name="model">coupon.generator</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="number"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="total_value"/>
+                <field name="currency_id"/>
+                <field name="customer_ids" widget='many2many_tags'/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="coupon_genrator_form" model="ir.ui.view">
+        <field name="name">coupon.generator.form</field>
+        <field name="model">coupon.generator</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+
+                        <group>
+                            <field name="name"/>
+                            <field name="number"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="total_value"/>
+                            <field name="currency_id"/>
+                            <field name="customer_ids" widget='many2many_tags'/>
+                        </group>
+                        <button name="create_coupon_master" string="Create" type="object" class="oe_highlight"
+                                style="width:100px;"/>
+
+
+                    </group>
+                    <notebook>
+                        <page name='Coupon' string='Coupon'>
+                            <field name="Coupon_ids"/>
+                        </page>
+
+                    </notebook>
+                </sheet>
+
+
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_coupon_genrator">
+        <field name="name">coupon Management</field>
+        <field name="res_model">coupon.generator</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="coupon_genrator_menu" name="Coupon"/>
+    <menuitem id="coupon_genrator_menu_2" name="Coupon Generator" parent="coupon_genrator_menu"/>
+    <menuitem id='coupon_genrator_id' name='coupon generator' parent="coupon_genrator_menu_2" action="action_coupon_genrator"/>
+
+</odoo>
