@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_inherited" model="ir.ui.view">
+        <field name="name">res.partner.form.inherited</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="name"/>
+                <field string="Coupon Count" name="coupon_count" widget="statinfo"/>
+            </xpath>
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button" type="object" name="get_coupon"
+                         icon="fa-list-alt">
+                    <field string="Coupon Count" name="coupon_count" widget="statinfo"/>
+                </button>
+            </div>
+        </field>
+    </record>
+    <record id="ksc_coupon_genrator" model="ir.actions.act_window">
+        <field name="name">coupon</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="ksc_coupon_genrator_id_1" name="Customer" action="ksc_coupon_genrator"
+              parent="coupon_genrator_menu"/>
+</odoo>

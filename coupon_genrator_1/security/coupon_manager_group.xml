@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="coupon_genrator_1_module" model="ir.module.category">
+            <field name="name">coupon generator auhtority</field>
+            <field name="description">Differentiate between user and manager</field>
+        </record>
+        <record id="coupon_user_access" model="res.groups">
+            <field name="name">Coupon_User</field>
+            <field name="category_id" ref="coupon_genrator_1_module"/>
+        </record>
+        <record id="coupon_manager_access" model="res.groups">
+            <field name="name">Coupon_Manager</field>
+            <field name="category_id" ref="coupon_genrator_1_module"/>
+        </record>
+    </data>
+</odoo>
+
+

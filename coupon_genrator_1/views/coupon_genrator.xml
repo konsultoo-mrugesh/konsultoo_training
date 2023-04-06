@@ -21,22 +21,22 @@
         <field name="model">coupon.generator</field>
         <field name="arch" type="xml">
             <form>
+
+                <button name="create_coupon_master" string="Coupon Master" type="object" class="oe_highlight"
+                        style="width:100px;"/>
                 <sheet>
                     <group>
-
                         <group>
                             <field name="name"/>
                             <field name="number"/>
                             <field name="start_date"/>
                             <field name="end_date"/>
+                        </group>
+                        <group>
                             <field name="total_value"/>
                             <field name="currency_id"/>
                             <field name="customer_ids" widget='many2many_tags'/>
                         </group>
-                        <button name="create_coupon_master" string="Create" type="object" class="oe_highlight"
-                                style="width:100px;"/>
-
-
                     </group>
                     <notebook>
                         <page name='Coupon' string='Coupon'>
@@ -59,7 +59,7 @@
     </record>
 
     <menuitem id="coupon_genrator_menu" name="Coupon"/>
-    <menuitem id="coupon_genrator_menu_2" name="Coupon Generator" parent="coupon_genrator_menu"/>
-    <menuitem id='coupon_genrator_id' name='coupon generator' parent="coupon_genrator_menu_2" action="action_coupon_genrator"/>
+    <menuitem id='coupon_genrator_id' name='Coupon generator' parent="coupon_genrator_menu"
+              action="action_coupon_genrator"/>
 
 </odoo>

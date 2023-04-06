@@ -26,7 +26,7 @@
                             <field name="start_date"/>
                             <field name="end_date"/>
                             <field name="coupon_value"/>
-                                            <field name="coupon_generator_id"/>
+                            <field name="coupon_generator_id"/>
 
                         </group>
 
@@ -43,8 +43,8 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-
-    <menuitem id="coupon_master_menu_2" name="Coupon Master" parent="coupon_genrator_menu"/>
-    <menuitem id='coupon_master_id' name='coupon Master' parent="coupon_genrator_menu_2" action="action_coupon_master"/>
+    <menuitem id="coupon_master_menu" name="Coupon Master" parent="coupon_genrator_menu"/>
+    <menuitem id="coupon_master_menu_2" name="Coupon Master" parent="coupon_genrator_menu"
+              action="action_coupon_master"/>
 
 </odoo>
